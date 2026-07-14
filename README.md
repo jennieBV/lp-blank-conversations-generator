@@ -8,9 +8,9 @@ This utility helps brands test routing rules, fallback behaviors, and agent assi
 
 ## 🎥 Demo Video
 
-![Project Demonstration](demo.gif)
 
-> **Note**: To display your recorded demonstration, simply place your video or GIF file in the root of this repository and rename it to `demo.gif` (or update the link above to point to your `.mp4`/`.mov` file).
+https://github.com/user-attachments/assets/1f8b1358-2d5a-4253-8a0c-b6f55f60503c
+
 
 ---
 
