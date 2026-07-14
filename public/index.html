@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LivePerson Blank Conversations Generator Tool</title>
+  
+  <!-- Modern Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet with Cache Busting -->
+  <link rel="stylesheet" href="style.css?v=3.6.0">
+</head>
+<body>
+  <!-- Animated Background Ambient Orbs for depth -->
+  <div class="background-decor-1"></div>
+  <div class="background-decor-2"></div>
+
+  <!-- Main Unified Layout Container -->
+  <div class="app-layout-single">
+    
+    <!-- Top Premium Navigation Bar Header -->
+    <header class="app-header-single">
+      <div class="header-logo-group">
+        <!-- Logo with slow rotation animation & transparent background -->
+        <img src="logo.png" class="header-logo rotating-logo" alt="LivePerson Logo">
+        <div class="header-brand-info">
+          <div class="header-title-row">
+            <h1 class="header-main-title">LivePerson Blank Conversations Generator Tool</h1>
+          </div>
+          <p class="header-desc">
+            This tool is intended for the synthetic creation of blank conversations - where the first consumer message is not delivered properly - to help brands test the best way to handle such occurrences.
+          </p>
+        </div>
+      </div>
+      
+      <div class="header-controls-group">
+        <!-- Theme Switcher -->
+        <button type="button" class="btn-theme-toggle" id="btn-theme-toggle" title="Toggle Light/Dark Theme">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon hidden" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sub-header Primary Page Navigation Bar -->
+    <nav class="app-navigation-bar">
+      <button type="button" class="btn-nav-page active" id="nav-btn-generator">
+        Generator Dashboard
+      </button>
+      <button type="button" class="btn-nav-page" id="nav-btn-history">
+        Closed History
+      </button>
+    </nav>
+
+    <!-- PAGE 1: Generator Dashboard View -->
+    <div id="page-generator" class="page-view">
+      <main class="dashboard-content-single">
+        
+        <!-- 2-Column Dashboard Grid (Top Cards) -->
+        <div class="dashboard-grid-top">
+          
+          <!-- LEFT COLUMN: Generator Settings Card -->
+          <div class="dashboard-column-config">
+            <div class="glass-card config-card consolidated-card">
+              <div class="card-header">
+                <h2>Generator Settings</h2>
+              </div>
+              
+              <div class="form-group">
+                <label for="window-accountId">Site ID</label>
+                <div class="input-wrapper-clean">
+                  <input type="text" id="window-accountId" placeholder="e.g. 57609520" required autocomplete="off">
+                </div>
+              </div>
+
+              <!-- Hidden defaults for background logic compatibility -->
+              <select id="window-authMode" style="display: none;">
+                <option value="guest" selected>Unauthenticated Flow</option>
+              </select>
+              <div id="credentials-container" style="display: none;">
+                <input type="text" id="window-clientId">
+                <input type="password" id="window-clientSecret">
+              </div>
+
+              <div class="form-row-split">
+                <div class="form-group flex-1">
+                  <label for="window-convo-count">Count</label>
+                  <div class="stepper-control">
+                    <button type="button" class="btn-stepper" id="window-convo-decrement" title="Decrease Count">−</button>
+                    <input type="number" id="window-convo-count" value="1" min="1" max="10">
+                    <button type="button" class="btn-stepper" id="window-convo-increment" title="Increase Count">+</button>
+                  </div>
+                </div>
+
+                <div class="form-group flex-1">
+                  <label for="window-skillId">Skill ID (Optional)</label>
+                  <div class="input-wrapper-clean">
+                    <input type="text" id="window-skillId" placeholder="e.g. 10502941" autocomplete="off">
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn-primary" id="btn-generate-window-api">
+                Generate Conversations
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Open Conversations Card (No history inside Generator view) -->
+          <div class="dashboard-column-sessions">
+            <div class="glass-card list-card">
+              <div class="card-header list-card-header">
+                <div class="header-left">
+                  <h2 id="open-conversations-title">Open blank conversations (0)</h2>
+                </div>
+                
+                <!-- Open List Action items -->
+                <div class="batch-controls-inline" id="window-select-all-container" style="display: none;">
+                  <label class="custom-checkbox-all">
+                    <input type="checkbox" id="window-convo-select-all">
+                    <span class="checkbox-checkmark-all"></span>
+                    <span class="checkbox-label" id="window-select-all-label">Select All</span>
+                  </label>
+                  <button type="button" class="btn-batch-close" id="window-btn-batch-close" style="display: none;">
+                    Close Selected
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Close Success Confirmation Banner (Isolated here, NEVER shown in history page) -->
+              <div id="close-success-banner" class="success-banner" style="display: none;">
+                Selected conversations have been successfully closed.
+              </div>
+              
+              <!-- Real-time scrollable open list -->
+              <div class="conversations-list-container" id="window-conversations-list">
+                <div class="empty-list-placeholder">
+                  <p>No open blank conversations found.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Full-Width Bottom Column: Debug Logs -->
+        <div class="dashboard-grid-bottom">
+          <div class="glass-card terminal-card">
+            <div class="card-header terminal-card-header">
+              <div class="header-left">
+                <h2>Debug logs</h2>
+              </div>
+              <div class="console-controls">
+                <button type="button" class="btn-toggle-logs" id="btn-toggle-logs">
+                  Enable Logs
+                </button>
+                <button type="button" class="btn-clear-logs" id="window-clear-logs-btn">
+                  Clear Logs
+                </button>
+              </div>
+            </div>
+            <div class="terminal-logs-container logs-disabled" id="window-terminal-logs">
+              <div class="log-line system-msg">[SYSTEM] Logs are disabled by default. Click "Enable Logs" to begin capture.</div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <!-- PAGE 2: Dedicated Closed History View (Clean, Wide & Fully Symmetrical) -->
+    <div id="page-history" class="page-view" style="display: none;">
+      <main class="dashboard-content-single">
+        <div class="glass-card full-width-card list-card">
+          <div class="card-header list-card-header">
+            <div class="header-left">
+              <h2 id="history-conversations-title">Closed History logs (0)</h2>
+            </div>
+            <div class="history-controls-inline" id="history-controls-container" style="display: none;">
+              <button type="button" class="btn-clear-history" id="btn-clear-history">
+                Clear History logs
+              </button>
+            </div>
+          </div>
+          
+          <div class="conversations-list-container wide-container" id="history-conversations-list">
+            <div class="empty-list-placeholder">
+              <p>No closed history found.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </div>
+
+  <!-- Orchestration Controller Script -->
+  <script src="app.js?v=3.6.0"></script>
+</body>
+</html>
