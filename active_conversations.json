@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "conversationId": "c7a57a7d-f3f3-42d7-bbd1-3481d9b87e40",
+    "extConsumerId": "blank_convo_1784053655770_57678",
+    "consumerJWS": "eyJraWQiOiIwMDAwMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI1YjM0M2EyNS0xNGZkLTQ0YWUtYjhjNC00MDA2YjRlMDNmMmQiLCJhdWQiOiJhY2M6NTc2MDk1MjAiLCJpc3MiOiJodHRwczpcL1wvaWRwLmxpdmVwZXJzb24ubmV0IiwiZXhwIjoyMTk0MjkzNjk2LCJpYXQiOjE3ODQwNTM2NTYsImp0aSI6ImU4MDVmNzZhLWQ5NWEtNDZhOS1hMWJkLWE0MzYwYzA1MTBkNyJ9.hn7sLHJ71m4RPKzEYKQ6E6QUsEPQwgxQXib25-WXk_UIZTebxh0-HXu_Ej2SphVxXOHEEfQ0H8Ef_Sv81FH_jW_oe93XB9HgGmxw-U3QtmQ38pCnLQPV3d2kRhMm_L2VPCRQ6zYxj37XqL8jJG-O5khqRs1N0ql7xsGSY4N1LyhB88yboZkR3DObj6V6qCE4sYUrK4A3TDu6iNm6KYtRAFHrWiOqz1AQdNCIVu1H8gPdgy51ELoMrkRx88IFNJ3ZVM7NlcKlEeo43EDqoZmewt5gMOTzm0oJDhamx0SRC6aBEhNsYEhccMDuDzVrRRfE_cfpTDslbjIJpomJEnigCA",
+    "accountId": "57609520",
+    "createdAt": "2026-07-14T18:27:36.641Z",
+    "status": "CLOSED",
+    "engine": "WINDOW_API",
+    "transferred": false,
+    "transferredTo": null,
+    "closedAt": "2026-07-14T18:28:01.447Z"
+  },
+  {
+    "conversationId": "fbc59539-3077-4636-a22a-99b24e01877f",
+    "extConsumerId": "blank_convo_1784053668007_75678",
+    "consumerJWS": "eyJraWQiOiIwMDAwMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI3ODM4ZGI5Ny03Yzc5LTQ2ZDItODYzNi0zODdmNGRlNWEwNmQiLCJhdWQiOiJhY2M6NTc2MDk1MjAiLCJpc3MiOiJodHRwczpcL1wvaWRwLmxpdmVwZXJzb24ubmV0IiwiZXhwIjoyMTk0MjkzNzA4LCJpYXQiOjE3ODQwNTM2NjgsImp0aSI6IjBiMGY4MGVkLTYwMjEtNDk1ZC1iMWI0LTdkNTVlYjJiZGU5NiJ9.EyNis98sB0iHKG8YsHT986yDTUEPF0GdXJRwpCPKq0jcGdAdP6EjzD4YsZZiMsJkiAReES8RXjKq4AU57NJNkgc2KvfLF_Fp4sedJh6g6vAfVd4Zsx64P42JoapLN7BTA1GwZiyMSUrmdVHVzzkRP8EzbAE9kQzvo4O24D354PgsPUIZ_h104dktEcdcPqQjh-E32MpfvLHw0V8VkniPlfXA9YegU8fhpooTJK8RcqQEbk-EodalSAyKSxr-p9AGF1ccIpKEEoytPtutz_cqCpau3ky0r_m14sWjS0CvtkvUYLXdrYkE-3xn9in-MvNF6i0Tj6sCDzB5AweQM81Dqg",
+    "accountId": "57609520",
+    "createdAt": "2026-07-14T18:27:48.761Z",
+    "status": "CLOSED",
+    "engine": "WINDOW_API",
+    "transferred": false,
+    "transferredTo": null,
+    "closedAt": "2026-07-14T18:28:02.030Z"
+  }
+]
